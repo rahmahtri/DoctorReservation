@@ -41,6 +41,8 @@ public class AccountServiceImpl implements AccountService, UserDetailsService {
                 hashPassword,
                 dto.getRole()
         );
+
+        accountRepository.save(account);
     }
 
     @Override
