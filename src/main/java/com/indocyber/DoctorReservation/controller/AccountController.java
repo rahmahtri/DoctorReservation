@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api")
 public class AccountController {
 
     @Autowired
@@ -62,6 +62,7 @@ public class AccountController {
     }
 
     //daftar account
+    @PostMapping("/addAccount")
     public ResponseEntity<String> addAccount(@RequestBody InsertAccountDTO dto){
         accountService.addAccount(dto);
         return ResponseEntity.status(HttpStatus.OK).body("Account berhasil ditambahkan");
